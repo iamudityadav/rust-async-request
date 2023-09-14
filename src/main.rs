@@ -11,7 +11,7 @@ error_chain! {
 async fn main() -> Result<()> {
     let res = reqwest::get("http://httpbin.org/get").await?;
 
-    println!("\nStatus is: {}\n", res.status());
+    println!("\nStatus: {}\n", res.status());
     println!("Headers:\n{:#?}\n", res.headers());
 
     let body = res.text().await?;
